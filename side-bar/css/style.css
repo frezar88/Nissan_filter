@@ -1,0 +1,395 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after :focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+input::-ms-clear:focus {
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*--------------------*/
+@font-face {
+  font-family: MMC-Regular;
+  src: url(../fonts/MMC-Regular.woff);
+}
+
+@font-face {
+  font-family: MMC-Bold;
+  src: url(../fonts/MMC-Bold.woff);
+}
+
+@font-face {
+  font-family: MMC-Medium;
+  src: url(../fonts/MMC-Medium.woff);
+}
+
+@font-face {
+  font-family: test;
+  src: url(../fonts/test.ttf);
+}
+
+@font-face {
+  font-family: MMC-Bold;
+  src: url(../fonts/MMC-Bold.woff);
+}
+
+@font-face {
+  font-family: TradeGothic-CondBoldTwenty;
+  src: url(../fonts/TradeGothic-CondBoldTwenty.woff);
+}
+
+@font-face {
+  font-family: iconsNative;
+  src: url(../fonts/iconsNative.woff2);
+}
+
+body {
+  font-family: 'MMC-Regular';
+}
+
+.accordion {
+  position: relative;
+  font-size: 23px;
+  text-align: start;
+  padding: 20px 15px;
+  width: 100%;
+  color: #222;
+  background-color: unset;
+}
+
+.accordion:hover {
+  cursor: pointer;
+}
+
+.accordion::after {
+  position: absolute;
+  content: url(../img/red-arrow.svg);
+  font-family: 'MMC-Bold';
+  right: 15px;
+  color: black;
+  top: 15px;
+  text-align: center;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  color: #ff0000;
+  font-size: 30px;
+  width: 20px;
+}
+
+.active:after {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+  right: 18px;
+}
+
+body {
+  background-color: #ebebeb;
+}
+
+.side-bar {
+  max-width: 381px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+.side-bar-header {
+  border-bottom: solid 1px gray;
+}
+
+.side-bar-header__wrapper {
+  padding: 0 15px;
+}
+
+.side-bar-header__found-auto {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.side-bar-header__found-auto span {
+  color: #aaa;
+  font-size: 20px;
+}
+
+.side-bar-header__special {
+  font-weight: 200;
+  font-size: 22px;
+}
+
+.side-bar-header__online-payment {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.side-bar-header__online-payment p {
+  margin-left: 20px;
+}
+
+.side-bar-header__switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+}
+
+.side-bar-header__switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  -webkit-box-shadow: 0 0 1px #2196f3;
+          box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(14px);
+  transform: translateX(14px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.list-block {
+  border-bottom: solid 1px gray;
+}
+
+.list__content {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.2s ease-out;
+  transition: max-height 0.2s ease-out;
+}
+
+.list__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px 0;
+  font-size: 16px;
+}
+
+.list__item:last-child {
+  margin-bottom: 20px;
+}
+
+.list__item input {
+  margin-right: 15px;
+  width: 18px;
+  height: 18px;
+}
+
+.list__clearbtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.list__clearbtn button {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 22px;
+  margin: 15px 0;
+  padding: 10px;
+  max-width: 300px;
+  width: 100%;
+  background-color: #c3002f;
+  color: #fff;
+  letter-spacing: 3px;
+}
+
+.list__complete-set {
+  position: relative;
+  max-height: 400px;
+  overflow: auto;
+}
+
+.list__color .list__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.list__color .list__content span {
+  margin: 5px 10px;
+  border-radius: 50%;
+  background-color: blue;
+  width: 24px;
+  height: 24px;
+  border: solid 1px rgba(128, 128, 128, 0.527);
+}
+
+.list__color .list__content .list__item:nth-child(1) span {
+  background-color: #6b6b6b;
+}
+
+.list__color .list__content .list__item:nth-child(2) span {
+  background-color: white;
+}
+
+.list__color .list__content .list__item:nth-child(3) span {
+  background-color: black;
+}
+
+.list__color .list__content .list__item:nth-child(4) span {
+  background-color: #dadada;
+}
+
+.list__color .list__content .list__item:nth-child(5) span {
+  background-color: #6e2e09;
+}
+
+.list__color .list__content .list__item:nth-child(6) span {
+  background-color: #fb885a;
+}
+
+.list__color .list__content .list__item:nth-child(7) span {
+  background-color: #332ff8;
+}
+
+.list__color .list__content .list__item:nth-child(8) span {
+  background-color: #44ce04;
+}
+
+.list__color .list__content .list__item:nth-child(9) span {
+  background-color: #ff1e1e;
+}
+
+.list__color .list__content .list__item:nth-child(10) {
+  margin-bottom: 0;
+}
+
+.list__color .list__content .list__item:nth-child(10) span {
+  background-color: #24baff;
+}
