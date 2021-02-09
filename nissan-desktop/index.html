@@ -4,30 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>filter</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <title>cars-in-stock</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-    <div class="filter">
-        <div class="filter__wrapper">
-            <div class="side-bar">
-                <div class="side-bar__wrapper">
-                    <div class="side-bar__button-close">
-                        <button class="side-bar-close">x</button>
+    <div class="cars-in-stock">
+        <div class="cars-in-stock__container">
+            <div class="filter">
+                <div class="filter__wrapper">
+                    <div class="filter__button-close">
+                        <div class="filter-close"><span>x</span></div>
                     </div>
-                    <div class="side-bar-header">
-                        <div class="side-bar-header__wrapper">
-                            <div class="side-bar-header__found-auto btnshow__text">
+                    <div class="filter-header">
+                        <div class="filter-header__wrapper">
+                            <div class="filter-header__found-auto btnshow__text">
                                 <span>Найден</span>
                                 <span class="count">1</span>
                                 <span>автомобиль</span>
                             </div>
-                            <div class="side-bar-header__special">
+                            <div class="filter-header__special">
                                 <h5>Спецпредложения</h5>
                             </div>
-                            <div class="side-bar-header__online-payment">
-                                <label class="side-bar-header__switch">
+                            <div class="filter-header__online-payment">
+                                <label class="filter-header__switch">
                                     <input type="checkbox" id="header__switch" checked>
                                     <span class="slider round"></span>
                                 </label>
@@ -38,238 +41,238 @@
                             </div>
                         </div>
                     </div>
-                    <div class="list">
-                        <div class="list__wrapper">
+                    <div class="filter-list">
+                        <div class="filter-list__wrapper">
                             <form method="dialog">
-                                <div class="list__model list-block">
-                                    <button class="accordion">Модель</button>
-                                    <div class="list__content">
-                                        <div class="list__item">
+                                <div class="filter-list__model filter-list-block">
+                                    <span class="accordion">Модель</span>
+                                    <div class="filter-list__content">
+                                        <div class="filter-list__item">
                                             <input type="checkbox" id="Murano"> <label
                                                 for="Murano"><span>Murano</span></label>
                                         </div>
-                                        <div class="list__item">
+                                        <div class="filter-list__item">
                                             <input type="checkbox" id="Qashqai"> <label for="Qashqai"><span>Qashqai
                                                     2020</span></label>
                                         </div>
-                                        <div class="list__item">
+                                        <div class="filter-list__item">
                                             <input type="checkbox" id="Terrano"> <label
                                                 for="Terrano"><span>Terrano</span></label>
                                         </div>
-                                        <div class="list__item">
+                                        <div class="filter-list__item">
                                             <input type="checkbox" id="X-Trail"> <label for="X-Trail"><span>X-Trail
                                                     2020</span></label>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="list__gearbox list-block">
-                                    <button class="accordion">Коробка передач</button>
-                                    <div class="list__content">
-                                        <div class="list__item">
+                                <div class="filter-list__gearbox filter-list-block">
+                                    <span class="accordion">Коробка передач</span>
+                                    <div class="filter-list__content">
+                                        <div class="filter-list__item">
                                             <input type="checkbox" id="manual-gearbox"><label
                                                 for="manual-gearbox"><span>МКПП</span></label>
                                         </div>
-                                        <div class="list__item">
+                                        <div class="filter-list__item">
                                             <input type="checkbox" id="Variator"><label
                                                 for="Variator"><span>Вариатор</span></label>
                                         </div>
-                                        <div class="list__item">
+                                        <div class="filter-list__item">
                                             <input type="checkbox" id="auto-gearbox"><label
                                                 for="auto-gearbox">АКПП</label>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="list__wheel-drive list-block">
-                                    <button class="accordion">Привод</button>
-                                    <div class="list__content">
-                                        <div class="list__item">
+                                <div class="filter-list__wheel-drive filter-list-block">
+                                    <span class="accordion">Привод</span>
+                                    <div class="filter-list__content">
+                                        <div class="filter-list__item">
                                             <input type="checkbox" id="front-wheel-drive"><label
                                                 for="front-wheel-drive"><span>Передний привод</span></label>
                                         </div>
-                                        <div class="list__item">
+                                        <div class="filter-list__item">
                                             <input type="checkbox" id="full-wheel-drive"><label
                                                 for="full-wheel-drive"><span>Полный привод</span></label>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="list__fuel list-block">
-                                    <button class="accordion">Топливо</button>
-                                    <div class="list__content">
-                                        <div class="list__item">
+                                <div class="filter-list__fuel filter-list-block">
+                                    <span class="accordion">Топливо</span>
+                                    <div class="filter-list__content">
+                                        <div class="filter-list__item">
                                             <input type="checkbox" id="gasoline"><label
                                                 for="gasoline"><span>Бензин</span></label>
                                         </div>
-                                        <div class="list__item">
+                                        <div class="filter-list__item">
                                             <input type="checkbox" id="diesel"><label
                                                 for="diesel"><span>Дизель</span></label>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="list__engine-volume list-block">
-                                    <button class="accordion">Объём двигателя</button>
-                                    <div class="list__content">
-                                        <div class="list__item">
+                                <div class="filter-list__engine-volume filter-list-block">
+                                    <span class="accordion">Объём двигателя</span>
+                                    <div class="filter-list__content">
+                                        <div class="filter-list__item">
                                             <input type="checkbox" id="engine-volume_1.2"><label
                                                 for="engine-volume_1.2"><span>1.2</span></label>
                                         </div>
-                                        <div class="list__item">
+                                        <div class="filter-list__item">
                                             <input type="checkbox" id="engine-volume_1.6"><label
                                                 for="engine-volume_1.6"><span>1.6</span></label>
                                         </div>
-                                        <div class="list__item">
+                                        <div class="filter-list__item">
                                             <input type="checkbox" id="engine-volume_2.0"><label
                                                 for="engine-volume_2.0"><span>2.0</span></label>
                                         </div>
-                                        <div class="list__item">
+                                        <div class="filter-list__item">
                                             <input type="checkbox" id="engine-volume_2.5"><label
                                                 for="engine-volume_2.5"><span>2.5</span></label>
                                         </div>
-                                        <div class="list__item">
+                                        <div class="filter-list__item">
                                             <input type="checkbox" id="engine-volume_3.5"><label
                                                 for="engine-volume_3.5"><span>3.5</span></label>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="list__complete-set list-block">
-                                    <button class="accordion">Комплектация</button>
-                                    <div class="list__content">
-                                        <div class="list__content-wrapper">
-                                            <div class="list__item-murano">
+                                <div class="filter-list__complete-set filter-list-block">
+                                    <span class="accordion">Комплектация</span>
+                                    <div class="filter-list__content">
+                                        <div class="filter-list__content-wrapper">
+                                            <div class="filter-list__item-murano">
                                                 <h4>Murano</h4>
-                                                <div class="list__item list__item-murano">
+                                                <div class="filter-list__item filter-list__item-murano">
                                                     <input type="checkbox" id="murano_High"><label
                                                         for="murano_High"><span>High</span></label>
                                                 </div>
-                                                <div class="list__item list__item-murano">
+                                                <div class="filter-list__item filter-list__item-murano">
                                                     <input type="checkbox" id="murano_High+"><label
                                                         for="murano_High+"><span>High+</span></label>
                                                 </div>
-                                                <div class="list__item list__item-murano">
+                                                <div class="filter-list__item filter-list__item-murano">
                                                     <input type="checkbox" id="murano_Mid"><label
                                                         for="murano_Mid"><span>Mid</span></label>
                                                 </div>
-                                                <div class="list__item list__item-murano">
+                                                <div class="filter-list__item filter-list__item-murano">
                                                     <input type="checkbox" id="murano_Top"><label
                                                         for="murano_Top"><span>Top</span></label>
                                                 </div>
-                                                <div class="list__item list__item-murano">
+                                                <div class="filter-list__item filter-list__item-murano">
                                                     <input type="checkbox" id="murano_Top+"> <label
                                                         for="murano_Top+"><span>Top+</span></label>
                                                 </div>
                                             </div>
-                                            <div class="list__item-qashqai">
+                                            <div class="filter-list__item-qashqai">
                                                 <h4>Qashqai 2020</h4>
-                                                <div class="list__item list__item-qashqai">
+                                                <div class="filter-list__item filter-list__item-qashqai">
                                                     <input type="checkbox" id="qashqai_LE-Top"><label
                                                         for="qashqai_LE-Top"><span>LE Top</span></label>
                                                 </div>
-                                                <div class="list__item list__item-qashqai">
+                                                <div class="filter-list__item filter-list__item-qashqai">
                                                     <input type="checkbox" id="qashqai_LE-Top-Coffee"><label
                                                         for="qashqai_LE-Top-Coffee"><span>LE Top Coffee</span></label>
                                                 </div>
-                                                <div class="list__item list__item-qashqai">
+                                                <div class="filter-list__item filter-list__item-qashqai">
                                                     <input type="checkbox" id="qashqai_LE-Yandex"><label
                                                         for="qashqai_LE-Yandex"><span>LE Yandex</span></label>
                                                 </div>
-                                                <div class="list__item list__item-qashqai">
+                                                <div class="filter-list__item filter-list__item-qashqai">
                                                     <input type="checkbox" id="qashqai_LE-Yandex-Coffee"> <label
                                                         for="qashqai_LE-Yandex-Coffee"><span>LE Yandex
                                                             Coffee</span></label>
                                                 </div>
-                                                <div class="list__item list__item-qashqai">
+                                                <div class="filter-list__item filter-list__item-qashqai">
                                                     <input type="checkbox" id="qashqai_SE"><label
                                                         for="qashqai_SE"><span>SE</span></label>
                                                 </div>
-                                                <div class="list__item list__item-qashqai">
+                                                <div class="filter-list__item filter-list__item-qashqai">
                                                     <input type="checkbox" id="qashqai_SE-Top"><label
                                                         for="qashqai_SE-Top"><span>SE Top</span></label>
                                                 </div>
-                                                <div class="list__item list__item-qashqai">
+                                                <div class="filter-list__item filter-list__item-qashqai">
                                                     <input type="checkbox" id="qashqai_SE-Top-Coffee"> <label
                                                         for="qashqai_SE-Top-Coffee"><span>SE Top Coffee</span></label>
                                                 </div>
-                                                <div class="list__item list__item-qashqai">
+                                                <div class="filter-list__item filter-list__item-qashqai">
                                                     <input type="checkbox" id="qashqai_SE-Yandex"> <label
                                                         for="qashqai_SE-Yandex"><span>SE Yandex</span></label>
                                                 </div>
-                                                <div class="list__item list__item-qashqai">
+                                                <div class="filter-list__item filter-list__item-qashqai">
                                                     <input type="checkbox" id="qashqai_SE-Yandex-Coffee"> <label
                                                         for="qashqai_SE-Yandex-Coffee"><span>SE Yandex
                                                             Coffee</span></label>
                                                 </div>
-                                                <div class="list__item list__item-qashqai">
+                                                <div class="filter-list__item filter-list__item-qashqai">
                                                     <input type="checkbox" id="qashqai_SE+"> <label
                                                         for="qashqai_SE+"><span>SE+</span></label>
                                                 </div>
-                                                <div class="list__item list__item-qashqai">
+                                                <div class="filter-list__item filter-list__item-qashqai">
                                                     <input type="checkbox" id="qashqai_XE"> <label
                                                         for="qashqai_XE"><span>XE</span></label>
                                                 </div>
                                             </div>
-                                            <div class="list__item-terrano">
+                                            <div class="filter-list__item-terrano">
                                                 <h4>Terrano</h4>
-                                                <div class="list__item list__item-terrano">
+                                                <div class="filter-list__item filter-list__item-terrano">
                                                     <input type="checkbox" id="terrano_Comfort"><label
                                                         for="terrano_Comfort"><span>Comfort</span></label>
                                                 </div>
-                                                <div class="list__item list__item-terrano">
+                                                <div class="filter-list__item filter-list__item-terrano">
                                                     <input type="checkbox" id="terrano_Elegance+"><label
                                                         for="terrano_Elegance+"><span>Elegance+</span></label>
                                                 </div>
-                                                <div class="list__item list__item-terrano">
+                                                <div class="filter-list__item filter-list__item-terrano">
                                                     <input type="checkbox" id="terrano_Elegance-Plus"><label
                                                         for="terrano_Elegance-Plus"><span>Elegance Plus</span></label>
                                                 </div>
-                                                <div class="list__item list__item-terrano">
+                                                <div class="filter-list__item filter-list__item-terrano">
                                                     <input type="checkbox" id="terrano_Tekna"><label
                                                         for="terrano_Tekna"><span>Tekna</span></label>
                                                 </div>
                                             </div>
-                                            <div class="list__item-xtrail">
+                                            <div class="filter-list__item-xtrail">
                                                 <h4>X-Trail 2020</h4>
-                                                <div class="list__item list__item-xtrail">
+                                                <div class="filter-list__item filter-list__item-xtrail">
                                                     <input type="checkbox" id="xtrail_LE"><label
                                                         for="xtrail_LE"><span>LE</span></label>
                                                 </div>
-                                                <div class="list__item list__item-xtrail">
+                                                <div class="filter-list__item filter-list__item-xtrail">
                                                     <input type="checkbox" id="xtrail_LE-Coffee+"><label
                                                         for="xtrail_LE-Coffee+"><span>LE Coffee+</span></label>
                                                 </div>
-                                                <div class="list__item list__item-xtrail">
+                                                <div class="filter-list__item filter-list__item-xtrail">
                                                     <input type="checkbox" id="xtrail_LE-Top"><label
                                                         for="xtrail_LE-Top"><span>LE Top</span></label>
                                                 </div>
-                                                <div class="list__item list__item-xtrail">
+                                                <div class="filter-list__item filter-list__item-xtrail">
                                                     <input type="checkbox" id="xtrail_LE-Top-Coffee"><label
                                                         for="xtrail_LE-Top-Coffee"><span>LE Top Coffee</span></label>
                                                 </div>
-                                                <div class="list__item list__item-xtrail">
+                                                <div class="filter-list__item filter-list__item-xtrail">
                                                     <input type="checkbox" id="xtrail_LE-Yandex"><label
                                                         for="xtrail_LE-Yandex"><span>LE Yandex</span></label>
                                                 </div>
-                                                <div class="list__item list__item-xtrail">
+                                                <div class="filter-list__item filter-list__item-xtrail">
                                                     <input type="checkbox" id="xtrail_LE-Yandex-Coffee"> <label
                                                         for="xtrail_LE-Yandex-Coffee"><span>LE Yandex
                                                             Coffee</span></label>
                                                 </div>
-                                                <div class="list__item list__item-xtrail">
+                                                <div class="filter-list__item filter-list__item-xtrail">
                                                     <input type="checkbox" id="xtrail_SE"><label
                                                         for="xtrail_SE"><span>SE</span></label>
                                                 </div>
-                                                <div class="list__item list__item-xtrail">
+                                                <div class="filter-list__item filter-list__item-xtrail">
                                                     <input type="checkbox" id="xtrail_SE-Top"><label
                                                         for="xtrail_SE-Top"><span>SE Top</span>
                                                 </div></label>
-                                                <div class="list__item list__item-xtrail">
+                                                <div class="filter-list__item filter-list__item-xtrail">
                                                     <input type="checkbox" id="xtrail_SE-Top-Coffee"> <label
                                                         for="xtrail_SE-Top-Coffee"><span>SE Top Coffee</span></label>
                                                 </div>
-                                                <div class="list__item list__item-xtrail">
+                                                <div class="filter-list__item filter-list__item-xtrail">
                                                     <input type="checkbox" id="xtrail_SE-Yandex"> <label
                                                         for="xtrail_SE-Yandex"><span>SE Yandex</span></label>
                                                 </div>
-                                                <div class="list__item list__item-xtrail">
+                                                <div class="filter-list__item filter-list__item-xtrail">
                                                     <input type="checkbox" id="xtrail_XE"><label
                                                         for="xtrail_XE"><span>XE</span></label>
                                                 </div>
@@ -277,88 +280,91 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="list__price list-block">
-                                    <button class="accordion">Цена</button>
-                                    <div class="list__content">
-                                        <div class="list__item">
-                                            <input type="checkbox"> <span>В наличии</span>
+                                <div class="filter-list__price filter-list-block">
+                                    <span class="accordion">Цена</span>
+                                    <div class="filter-list__content">
+                                        <div class="price-input">
+                                            <input id="minPrice" type="number">
+                                            <input id="maxPrice" type="number">
                                         </div>
-                                        <div class="list__item">
-                                            <input type="checkbox"> <span>В пути</span>
+                                        <div class="slider-wrapper">
+                                            <div id="slider-range"></div>
                                         </div>
+                                        <div class="margin"></div>
                                     </div>
                                 </div>
-                                <div class="list__year list-block">
-                                    <button class="accordion">Год выпуска</button>
-                                    <div class="list__content">
+                                <div class="filter-list__year filter-list-block">
+                                    <span class="accordion">Год выпуска</span>
+                                    <div class="filter-list__content">
 
-                                        <div class="list__item">
+                                        <div class="filter-list__item">
                                             <input type="checkbox" id="year-2020"><label
                                                 for="year-2020"><span>2020</span></label>
                                         </div>
-                                        <div class="list__item">
+                                        <div class="filter-list__item">
                                             <input type="checkbox" id="year-2021"><label
                                                 for="year-2021"><span>2021</span></label>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="list__dealer list-block">
-                                    <button class="accordion">Дилер</button>
-                                    <div class="list__content">
+                                <div class="filter-list__dealer filter-list-block">
+                                    <span class="accordion">Дилер</span>
+                                    <div class="filter-list__content">
                                         <h4>Минск</h4>
-                                        <div class="list__item">
+                                        <div class="filter-list__item">
                                             <input type="checkbox" id="Derz"><label for="Derz"><span>пр-т Дзержинского,
                                                     134</span></label>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="list__color list-block">
-                                    <button class="accordion">Цвет</button>
-                                    <div class="list__content">
-                                        <div class="list__item">
+                                <div class="filter-list__color filter-list-block">
+                                    <span class="accordion">Цвет</span>
+                                    <div class="filter-list__content">
+                                        <div class="filter-list__item">
                                             <input type="checkbox" id="grey">
-                                            <label for="grey"><span>&#10003</span></label>
+                                            <label for="grey"><span><img src="img/arrow.svg" alt="#"></span></label>
                                         </div>
-                                        <div class="list__item">
+                                        <div class="filter-list__item">
                                             <input type="checkbox" id="white">
-                                            <label for="white"><span>&#10003</span></label>
+                                            <label for="white"><span><img src="img/arrow.svg" alt="#"></span></label>
                                         </div>
-                                        <div class="list__item">
+                                        <div class="filter-list__item">
                                             <input type="checkbox" id="black">
-                                            <label for="black"><span>&#10003</span></label>
+                                            <label for="black"><span><img src="img/arrow.svg" alt="#"></span></label>
                                         </div>
-                                        <div class="list__item">
+                                        <div class="filter-list__item">
                                             <input type="checkbox" id="white-grey">
-                                            <label for="white-grey"><span>&#10003</span></label>
+                                            <label for="white-grey"><span><img src="img/arrow.svg"
+                                                        alt="#"></span></label>
                                         </div>
-                                        <div class="list__item">
+                                        <div class="filter-list__item">
                                             <input type="checkbox" id="brown">
-                                            <label for="brown"><span>&#10003</span></label>
+                                            <label for="brown"><span><img src="img/arrow.svg" alt="#"></span></label>
                                         </div>
-                                        <div class="list__item">
+                                        <div class="filter-list__item">
                                             <input type="checkbox" id="orange">
-                                            <label for="orange"><span>&#10003</span></label>
+                                            <label for="orange"><span><img src="img/arrow.svg" alt="#"></span></label>
                                         </div>
-                                        <div class="list__item">
+                                        <div class="filter-list__item">
                                             <input type="checkbox" id="blue">
-                                            <label for="blue"><span>&#10003</span></label>
+                                            <label for="blue"><span><img src="img/arrow.svg" alt="#"></span></label>
                                         </div>
-                                        <div class="list__item">
+                                        <div class="filter-list__item">
                                             <input type="checkbox" id="green">
-                                            <label for="green"><span>&#10003</span></label>
+                                            <label for="green"><span><img src="img/arrow.svg" alt="#"></span></label>
                                         </div>
-                                        <div class="list__item">
+                                        <div class="filter-list__item">
                                             <input type="checkbox" id="red">
-                                            <label for="red"><span>&#10003</span></label>
+                                            <label for="red"><span><img src="img/arrow.svg" alt="#"></span></label>
                                         </div>
-                                        <div class="list__item">
+                                        <div class="filter-list__item">
                                             <input type="checkbox" id="sky-blue">
-                                            <label for="sky-blue"><span>&#10003</span></label>
+                                            <label for="sky-blue"><span><img src="img/arrow.svg" alt="#"></span></label>
                                         </div>
 
                                     </div>
                                 </div>
-                                <div class="list__clearbtn">
+                                <div class="filter-list__clearbtn">
                                     <button type="reset">Очистить фильтр</button>
                                 </div>
 
@@ -374,7 +380,7 @@
             </div>
             <div class="result-auto">
                 <div class="result-auto__header">
-                    <div class="button__side-bar-show">
+                    <div class="button__filter-show">
                         <p>Фильтр</p>
                         <div class="button__text">
                             <span class="count">1&nbsp &nbsp</span>
@@ -388,7 +394,7 @@
 
                         <div class="header__title">
                             <div>
-                                <h4>Сортировать по цене</h4>
+                                <h4>Сортировать по &nbsp цене</h4>
                             </div>
                             <div id="pyramid">
                                 <span></span>
@@ -455,7 +461,7 @@
                                 </div>
                                 <div class="car-list__more-price">
                                     <a href="#">
-                                        <img src="img/ScreenShot5.png" alt="#">
+                                        <img src="img/round-info-button.svg" alt="#">
                                         <p>Подробнее о цене</p>
                                     </a>
                                 </div>
@@ -506,7 +512,7 @@
                                 </div>
                                 <div class="car-list__more-price">
                                     <a href="#">
-                                        <img src="img/ScreenShot5.png" alt="#">
+                                        <img src="img/round-info-button.svg" alt="#">
                                         <p>Подробнее о цене</p>
                                     </a>
                                 </div>
@@ -557,7 +563,7 @@
                                 </div>
                                 <div class="car-list__more-price">
                                     <a href="#">
-                                        <img src="img/ScreenShot5.png" alt="#">
+                                        <img src="img/round-info-button.svg" alt="#">
                                         <p>Подробнее о цене</p>
                                     </a>
                                 </div>
@@ -608,7 +614,7 @@
                                 </div>
                                 <div class="car-list__more-price">
                                     <a href="#">
-                                        <img src="img/ScreenShot5.png" alt="#">
+                                        <img src="img/round-info-button.svg" alt="#">
                                         <p>Подробнее о цене</p>
                                     </a>
                                 </div>
@@ -622,7 +628,8 @@
             </div>
         </div>
     </div>
-    <script src="scripts/script.js"></script>
+    <script src="scripts/nouislider.min.js"></script>
+    <script type="module" src="/scripts/main.js"></script>
 </body>
 
-</html>
+</html>z

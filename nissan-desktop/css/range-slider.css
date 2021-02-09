@@ -1,0 +1,81 @@
+
+.slider-wrapper {
+  margin-right: 15px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+#slider-range {
+  height: 4px;
+  width: 100%;
+}
+.noUi-touch-area {
+  position: absolute;
+  left: 20px;
+}
+.noUi-tooltip {
+  display: none;
+}
+.noUi-connect {
+  background-color: #ed0000;
+}
+.noUi-connects {
+  background-color: #d3d3d3;
+}
+.noUi-handle::after,
+.noUi-handle::before {
+  display: none;
+}
+.noUi-handle:focus {
+  outline: none;
+}
+.noUi-handle-upper,
+.noUi-handle-lower {
+  background-color: #ed0000;
+  transform: translate(0, -3px);
+  box-shadow: none;
+  border: none;
+  width: 10px;
+}
+.noUi-handle-upper {
+  transform: translate(0px, -3px);
+}
+
+.noUi-horizontal .noUi-handle {
+  width: 20px;
+  height: 20px;
+}
+.price-input {
+  display: flex;
+  justify-content: space-between;
+}
+.price-input input {
+  border: none;
+  border: solid 1px rgb(200, 200, 200);
+  max-width: 9.7rem;
+  width: 100%;
+  height: 0.6rem;
+  padding: 1rem;
+}
+.price-input input:first-child {
+  margin-right: 10px;
+}
+.price-input input:focus {
+  transition: 0.1s;
+  outline: none;
+  color: red;
+  border: solid 1px #ed0000;
+}
+.price-input input[type="number"] {
+  -moz-appearance: textfield;
+}
+.price-input input::-webkit-inner-spin-button,
+.price-input input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+@media (max-width: 768px) {
+  .price-input input {
+    max-width: unset;
+
+    width: 100%;
+  }
+}
