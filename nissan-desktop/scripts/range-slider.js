@@ -1,15 +1,15 @@
-export function priceRangeSlider() {
+export function priceRangeSlider(min,max) {
   const priceSlider = document.getElementById("slider-range");
 
   if (priceSlider) {
     noUiSlider.create(priceSlider, {
-      start: [20000, 50000],
+      start: [min+10000, max-10000],
       tooltips: true,
       connect: true,
       padding: 0,
       range: {
-        min: 10000,
-        max: 60000,
+        min: min,
+        max: max,
       },
     });
 

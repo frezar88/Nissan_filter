@@ -1,4 +1,4 @@
-export class CreateCarListItem {
+export class CarListBuilder {
   constructor(data, list) {
     data.forEach((element) => {
       const carList = document.querySelector(list);

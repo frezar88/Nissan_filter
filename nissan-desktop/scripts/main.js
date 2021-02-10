@@ -1,11 +1,12 @@
 import { priceRangeSlider } from "./range-slider.js"
 import { sideBar } from "./side-bar.js";
-// import { asyncAj, response } from "./ajax.js";
+import { CarListBuilder } from "./result-car.js";
+import { response, ajax } from "./ajax.js";
 // import { ajax } from "./ajax.js";
-// import { CreatCarListItem } from "./result-car.js";
-priceRangeSlider()
+priceRangeSlider(10000,60000)
 sideBar();
-
+console.log(response)
+ajax()
 // ajax(response => {
 //   new CreatCarListItem(response);
 // });
