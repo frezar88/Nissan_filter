@@ -3,13 +3,13 @@ export function priceRangeSlider() {
 
   if (priceSlider) {
     noUiSlider.create(priceSlider, {
-      start: [2000, 5000],
+      start: [20000, 50000],
       tooltips: true,
       connect: true,
       padding: 0,
       range: {
-        min: 1000,
-        max: 6000,
+        min: 10000,
+        max: 60000,
       },
     });
 

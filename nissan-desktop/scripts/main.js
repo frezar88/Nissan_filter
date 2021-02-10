@@ -4,7 +4,7 @@ import { sideBar } from "./side-bar.js";
 // import { ajax } from "./ajax.js";
 // import { CreatCarListItem } from "./result-car.js";
 priceRangeSlider()
-sideBar()
+sideBar();
 
 // ajax(response => {
 //   new CreatCarListItem(response);
@@ -16,8 +16,8 @@ sideBar()
 // }
 // init();
 
-// //result-auto
-// const resultPyramid = document.getElementById("pyramid");
-// resultPyramid.addEventListener("click", () => {
-//   resultPyramid.classList.toggle("revers");
-// });
+//result-auto
+const resultPyramid = document.getElementById("pyramid");
+resultPyramid.addEventListener("click", () => {
+  resultPyramid.classList.toggle("revers");
+});

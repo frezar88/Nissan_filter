@@ -12,9 +12,7 @@
 :active {
     outline: none;
 }
-a{
-    cursor: none;
-}
+
 a:focus,
 a:active {
     outline: none;
@@ -96,6 +94,8 @@ h6 {
     font-size: inherit;
     font-weight: 400;
 }
-
+label{
+    cursor: pointer;
+}
 
 /*--------------------*/
