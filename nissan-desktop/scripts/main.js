@@ -10,7 +10,6 @@ pyramidSortPrice();
 ajax();
 
 
-
 // ajax(response => {
 //   new CreatCarListItem(response);
 // });
