@@ -1,4 +1,5 @@
-// export let response = "";
+
+export let response = "";
 // export function ajax(callback) {
 //   let request = new XMLHttpRequest();
 
@@ -13,9 +14,9 @@
 //   });
 //   request.send();
 // }
-// ajax();
 
-export let response = '';
+
+
 export function ajax() {
   var request = new XMLHttpRequest();
   let response = "";
@@ -26,7 +27,8 @@ export function ajax() {
       // console.log(request);
       // console.log(JSON.parse(request.responseText));
       response = JSON.parse(request.responseText);
-      console.log(response);
+      
+      
     } 
   });
   request.send();
@@ -34,15 +36,14 @@ export function ajax() {
 }
 
 
-
-// export async function asyncAj(callback) {
+// export async function asyncAj() {
 //   return new Promise((res, rej) => {
 //     let request = new XMLHttpRequest();
 
 //     request.open(
 //       "GET",
 //       "https://mitsubishi.by/car-in-stock/get-all-cars",
-//       true
+     
 //     );
     
 //     request.addEventListener("readystatechange", function () {

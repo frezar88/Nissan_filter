@@ -8,6 +8,9 @@
   height: 4px;
   width: 100%;
 }
+.noUi-target{
+  border: none;
+}
 .noUi-touch-area {
   position: absolute;
   left: 20px;
@@ -17,6 +20,7 @@
 }
 .noUi-connect {
   background-color: #ed0000;
+  height: 30px;
 }
 .noUi-connects {
   background-color: #d3d3d3;
