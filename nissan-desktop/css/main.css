@@ -370,6 +370,7 @@ input:checked + .slider:before {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  overflow: unset;
 }
 
 .filter-list__item:last-child {
@@ -882,6 +883,10 @@ input:checked + .slider:before {
 }
 
 @media (max-width: 768px) {
+  .filter-list__color .filter-list__content {
+  
+  overflow: hidden;
+}
   .accordion::before{
 transform: 12s;
   position: absolute;

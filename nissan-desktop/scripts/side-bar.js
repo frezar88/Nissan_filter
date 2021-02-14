@@ -26,7 +26,7 @@ export function sideBar() {
 
   function filterColorSetOverflow() {
     let color = document.getElementById("accColor");
-    color.addEventListener("click", function name(params) {
+    color.addEventListener("click", function () {
       let content = this.nextElementSibling;
       if (color.classList.value == "accordion active") {
         setTimeout(() => {

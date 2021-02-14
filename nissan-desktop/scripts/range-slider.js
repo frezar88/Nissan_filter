@@ -22,8 +22,9 @@ export function priceRangeSlider(min, max) {
     });
     const setPriceSlider = (i, value) => {
       let arr = [null, null];
-      arr[i] = value;
-
+      let v = value;
+      v = v.replace(/\s+/g, "");
+      arr[i] = v;
       priceSlider.noUiSlider.set(arr);
     };
     inputs.forEach((element, index) => {
@@ -32,19 +33,4 @@ export function priceRangeSlider(min, max) {
       });
     });
   }
-  function watchInputValue() {
-    inputs.forEach((element) => {
-      element.addEventListener("change", () => {
-        minPrice.value = minPrice.value.replace(
-          /(\d{1,3})(?=((\d{3})*)$)/g,
-          " $1"
-        );
-        maxPrice.value = maxPrice.value.replace(
-          /(\d{1,3})(?=((\d{3})*)$)/g,
-          " $1"
-        );
-      });
-    });
-  }
-  watchInputValue();
 }
