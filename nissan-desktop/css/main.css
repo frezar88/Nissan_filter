@@ -884,7 +884,6 @@ input:checked + .slider:before {
 
 @media (max-width: 768px) {
   .filter-list__color .filter-list__content {
-  
   overflow: hidden;
 }
   .accordion::before{

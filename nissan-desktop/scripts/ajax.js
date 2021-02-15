@@ -8,8 +8,8 @@ export let response = "";
 //   request.addEventListener("readystatechange", function () {
 //     if (request.readyState == 4 && request.status == 200) {
 //       response = JSON.parse(request.responseText);
-//       console.log(response);
-//       callback(response);
+      
+//       function callback(response){};
 //     }
 //   });
 //   request.send();

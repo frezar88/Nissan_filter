@@ -7,11 +7,13 @@ import { pyramidSortPrice } from "./priceSortPiramid.js";
 priceRangeSlider(10000, 60000);
 sideBar();
 pyramidSortPrice();
+// ajax();
 ajax();
 
 
+
 // ajax(response => {
-//   new CreatCarListItem(response);
+//   new CarListBuilder(response);
 // });
 
 // async function init(){
@@ -19,4 +21,4 @@ ajax();
 // }
 // init();
 
-//result-auto
+
