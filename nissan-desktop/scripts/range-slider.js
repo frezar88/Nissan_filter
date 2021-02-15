@@ -5,7 +5,7 @@ export function priceRangeSlider(min, max) {
   const inputs = [minPrice, maxPrice];
   if (priceSlider) {
     noUiSlider.create(priceSlider, {
-      start: [min + 10000, max - 10000],
+      start: [min + 10000, max - 20000],
       tooltips: true,
       connect: true,
       padding: 0,

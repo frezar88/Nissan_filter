@@ -1,6 +1,7 @@
 export class CarListBuilder {
   constructor(data, list) {
     data.forEach((element) => {
+     
       const carList = document.querySelector(list);
       const carListItem = document.createElement("div");
       carListItem.classList.add("car-list__item");
@@ -11,7 +12,7 @@ export class CarListBuilder {
       carListItem.appendChild(imgItem);
 
       const img = document.createElement("img");
-      img.setAttribute("src", element.image);
+      img.setAttribute("src", "http://dev.mitsubishi.by" + element.image);
       imgItem.appendChild(img);
 
       const carListTitle = document.createElement("div");

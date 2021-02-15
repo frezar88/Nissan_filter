@@ -42,7 +42,7 @@ export function sideBar() {
       ".filter-list__color .filter-list__content"
     );
     let accordColor = document.getElementById("accColor");
-    console.log(accColor.classList.value);
+    
     window.addEventListener("resize", () => {
       if (accordColor.classList.value == "accordion") {
         coll.style.overflow = "hidden";
