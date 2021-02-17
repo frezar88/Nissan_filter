@@ -3,6 +3,7 @@ import { sideBar } from "./side-bar.js";
 import { CarBuilder } from "./resulCarListBuilder.js";
 import { RequestData } from "./ajax.js";
 import { pyramidSortPrice } from "./priceSortPiramid.js";
+
 // import { Filter } from "./filter.js";
 
 

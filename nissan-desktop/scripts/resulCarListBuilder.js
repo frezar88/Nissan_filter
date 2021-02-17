@@ -3,16 +3,23 @@ export class CarBuilder {
   carContainer;
   path;
   car;
-
+  x;
+  
+  static Dombuilder(el) {
+   let a= document.createElement(`${el}`)
+    return x +=a
+  }
   constructor(car, path) {
-
+    console.log(this.x)
     this.path = path;
     this.car = car;
 
     this.carContainer = this.createCar(this.car, this.path);
     this.append(path, this.carContainer);
   }
+  
   createCar() {
+    
     this.createItem();
     this.addImg(this.car.image);
     this.addTitle(this.car.name, this.car.year, this.car.win ? this.car.win : "");
@@ -23,10 +30,10 @@ export class CarBuilder {
     this.addLocation(this.car.location ? this.car.location : 'Минск');
     return this.carContainer;
   }
-
   createItem() {
     let div = document.createElement("div");
     div.classList.add("car-list__item");
+    
     return (this.carContainer = div);
   }
   addImg(image) {
@@ -61,5 +68,9 @@ export class CarBuilder {
   }
   append(path, content) {
     document.querySelector(path).appendChild(content);
+  }
+
+  Dombuilder() {
+    
   }
 }
