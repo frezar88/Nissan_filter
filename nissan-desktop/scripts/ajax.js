@@ -1,15 +1,24 @@
-export let dataContent = {};
-export async function ajaxFetch(url, method) {
-  let response = await fetch(url, {
-    method: method,
-  });
-  if (!response.ok) return console.error("Error");
-  let data = await response.json();
 
-  return new Promise(function (respone, reject) {
-    dataContent = data;
-    respone()
-  })
+export class RequestData {
+  constructor() {
+  }
+  async requestRun(url, method) {
+    let domain = 'https://mitsubishi.by/' + url,
+      meth = method
+    let response = await fetch(domain, {
+      method: method,
+    })
+    if (!response.ok) return console.error("Error");
+    return response.json();
+  }
 }
 
 
+// export async function ajaxFetch(url, method) {
+//   let domain = "https://mitsubishi.by/" + url
+//   let response = await fetch(domain, {
+//     method: method,
+//   });
+//   if (!response.ok) return console.error("Error");
+//   return response.json();
+// }

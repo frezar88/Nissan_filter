@@ -65,7 +65,6 @@ export function sideBar() {
     }
   }
   advanseCloseBar();
-  ////////////////
   let filter = document.querySelector(".filter");
   const body = document.querySelector("body");
   function watchFilterStatus() {

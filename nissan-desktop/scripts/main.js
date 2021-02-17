@@ -1,20 +1,25 @@
 import { priceRangeSlider } from "./range-slider.js";
 import { sideBar } from "./side-bar.js";
-import { CarListBuilder } from "./result-car.js";
-import { dataContent, ajaxFetch } from "./ajax.js";
+import { CarBuilder } from "./resulCarListBuilder.js";
+import { RequestData } from "./ajax.js";
 import { pyramidSortPrice } from "./priceSortPiramid.js";
-import {} from "./filterFunction.js";
+// import { Filter } from "./filter.js";
+
 
 priceRangeSlider(10000, 150000);
 sideBar();
+// let f = new Filter();
 pyramidSortPrice();
-ajaxFetch("https://mitsubishi.by/car-in-stock/get-all-cars", "POST").then(() => {
-    let carList = new CarListBuilder(dataContent.cars, ".car-list__wrapper");
-    let x = document.querySelectorAll(".count");
-    x.forEach(element => {
-        element.innerHTML = document.querySelectorAll(".car-list__wrapper .car-list__item").length;
+
+let requesCarsList = new RequestData().requestRun("car-in-stock/get-all-cars", "GET").then((data) => {
+    data.cars.forEach((car) => {
+        let carList = new CarBuilder(car, ".car-list__wrapper");
     });
-});
+})
+
+
+
+
 
 
 
