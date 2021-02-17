@@ -13,8 +13,9 @@ sideBar();
 pyramidSortPrice();
 
 let requesCarsList = new RequestData().requestRun("car-in-stock/get-all-cars", "GET").then((data) => {
+    let carList = new CarBuilder(data.cars[0], ".car-list__wrapper", ['id', 'style', 'class', 'data', 'src', 'href']);
     data.cars.forEach((car) => {
-        let carList = new CarBuilder(car, ".car-list__wrapper");
+        
     });
 })
 
