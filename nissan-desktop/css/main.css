@@ -753,7 +753,7 @@ input:checked+.slider:before {
     color: #999;
     display: flex;
     align-items: flex-end;
-    min-width: 280px;
+    
 }
 
 .car-list__price-from {
@@ -761,7 +761,12 @@ input:checked+.slider:before {
     color: black;
     margin-right: 10px;
 }
-
+.car-list__price-from span:first-child{
+    margin-right: 5px;
+}
+.car-list__price-from span:last-child{
+    margin-left: 5px;
+}
 .car-list__price-to {
     text-decoration: line-through;
     font-size: 16px;
@@ -824,12 +829,17 @@ input:checked+.slider:before {
     transform: rotate(90deg);
 }
 
+ 
+    
+    
 
 /* ------------------@media---------------- */
 
 @media (max-width: 1420px) {
     .filter {
         max-width: 290px;
+        min-width: 244px;
+        margin: 0;
     }
     .car-list__price {
         display: block;
@@ -840,6 +850,12 @@ input:checked+.slider:before {
     .car-list__price-to {
         margin-top: 10px;
     }
+    .car-list__price {
+        display: block;
+    }
+    .cars-in-stock__container {
+        grid-template-columns: 1fr 4fr;
+    }
 }
 
 @media (max-width: 1255px) {
@@ -849,6 +865,10 @@ input:checked+.slider:before {
 }
 
 @media (max-width: 1000px) {
+    .filter {
+        
+        max-width: 244px;
+    }
     .result-auto {
         overflow: hidden;
     }
@@ -868,9 +888,7 @@ input:checked+.slider:before {
         padding: 20px;
         border-bottom: solid 1px rgb(220, 220, 220);
     }
-    .cars-in-stock__container {
-        grid-template-columns: 280px 1fr;
-    }
+    
 }
 
 @media (max-width: 960px) {
