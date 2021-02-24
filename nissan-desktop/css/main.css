@@ -361,6 +361,41 @@ input:checked+.slider:before {
     max-height: 400px;
 }
 
+.filter-list__year .filter-list__content{
+    display: flex;
+    flex-direction: column;
+}
+.filter-list__year  .filter-list__item:last-child{
+order: 0;
+margin: 0;
+}
+.filter-list__year  .filter-list__item:nth-child(4){
+order: -1;
+margin: 0;
+}
+.filter-list__year  .filter-list__item:nth-child(5){
+margin-bottom: 20px;
+}
+
+
+
+.filter-list__engine .filter-list__content{
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-list__engine  .filter-list__item:last-child{
+
+margin-bottom: 0;
+}
+.filter-list__engine  .filter-list__item:nth-child(7){
+order:1 ;
+margin-bottom: 20px;
+}
+
+
+/*-------------------------*/
+
 .filter-list__complete-set input {
     transform: translateX(5px);
 }
@@ -378,11 +413,17 @@ input:checked+.slider:before {
     flex-wrap: wrap;
     overflow: unset;
 }
-
+.filter-list__engine .filter-list__content h4{
+    text-transform: uppercase;
+    margin-top: 20px;
+    font-weight: normal;
+}
 .filter-list__item:last-child {
     margin-bottom: 20px;
 }
-
+.filter-list__price  .filter-list__item{
+  margin-bottom: 0;
+}
 .filter-list__color .filter-list__item:last-child {
     margin: 0;
 }
@@ -401,13 +442,16 @@ input:checked+.slider:before {
     display:flex;
     align-items: center;
 }
-
+.filter-list__color .filter-list__item {
+    padding: 0;
+    padding-bottom: 10px;
+}
 .filter-list__color .filter-list__item label div {
     position: absolute;
     top: -45px;
     border: solid 1px rgb(220, 220, 220);
     border-radius: 5px;
-    padding: 10px 10px;
+    padding: 5px 10px;
     font-size: 10px;
     color: black;
     letter-spacing: 1px;
@@ -416,6 +460,7 @@ input:checked+.slider:before {
     margin-bottom: -18px;
     z-index: 10;
     transition: 1s;
+    text-align: center;
 }
 
 .filter-list__color .filter-list__item label div::before {
@@ -461,7 +506,7 @@ input:checked+.slider:before {
     background-color: #f8f8f8;
 }
 
-.filter-list__color input:checked~label span {
+.filter-list__color input:checked~ span {
     transform: scale3d(1.2, 1.2, 1);
 }
 
@@ -690,7 +735,7 @@ input:checked+.slider:before {
 }
 
 .car-list__img img {
-    transform: scale(1.2);
+    transform: scale(1.1);
     width: 100%;
 }
 
@@ -1102,6 +1147,9 @@ input:checked+.slider:before {
     .filter-list__content .filter-list__content-wrapper {
         max-height: none;
     }
+    .filter-list__price .additionally-close{
+        display: none;
+    }
 }
 
 @media (max-width: 600px) {
@@ -1143,16 +1191,20 @@ input:checked+.slider:before {
 }
 
 .margin-box {
-    margin-top: 5px;
+    margin-top: 25px;
     opacity: 0;
 }
 
 .over-hidden {
     overflow: hidden;
 }
-.disableBlock{
+
+.true{
     pointer-events: none;
     opacity: 0.3;
+}
+.change{
+    display: none;
 }
 
 #scrollStyle-1::-webkit-scrollbar {

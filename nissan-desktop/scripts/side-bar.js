@@ -10,7 +10,8 @@ export function sideBar() {
       if (content.style.maxHeight) {
         content.style.maxHeight = null;
       } else {
-        content.style.maxHeight = content.scrollHeight + "px";
+        content.style.maxHeight = content.scrollHeight+50+"px";
+        
         if (window.innerWidth < 768) {
           setTimeout(() => {
             this.scrollIntoView({ block: "center", behavior: "smooth" });
@@ -25,7 +26,7 @@ export function sideBar() {
  
 
   function filterColorSetOverflow() {
-    let color = document.getElementById("accColor");
+    let color = document.querySelector(".filter-list__color .accordion");
     color.addEventListener("click", function () {
       let content = this.nextElementSibling;
       if (color.classList.value == "accordion active") {
@@ -38,13 +39,12 @@ export function sideBar() {
       };
       
     });
-    let coll = document.querySelector(
+    let colorr = document.querySelector(
       ".filter-list__color .filter-list__content"
     );
-    let accordColor = document.getElementById("accColor");
     
     window.addEventListener("resize", () => {
-      if (accordColor.classList.value == "accordion") {
+      if (colorr.classList.value == "accordion") {
         coll.style.overflow = "hidden";
       }
       

@@ -4,11 +4,11 @@ export class CarBuilder {
   carContainer;
   path;
   car;
-  acceptAtributsList;
-  constructor(car, path, acceptKeys) {
+  
+  constructor(car, path) {
     this.path = path;
     this.car = car;
-    this.acceptAtributsList = acceptKeys
+    
     this.carContainer = this.createCar(this.car, this.path);
     this.append(path, this.carContainer);
   }
@@ -23,7 +23,7 @@ export class CarBuilder {
   createElementSettings(dom, settings) {
 
     for (let key in settings.attributes) {
-      this.acceptAtributsList.includes(key) ? dom.setAttribute(key, settings.attributes[key]) : console.log('Введен неизвестный атрибут')
+      dom.setAttribute(key, settings.attributes[key])
     }
     if (typeof settings.inner == "object") {
       settings.inner.forEach(inner => {
@@ -40,7 +40,7 @@ export class CarBuilder {
     this.addImg(this.car.image);
     this.addTitle(this.car.name, this.car.year, this.car.win ? this.car.win : "");
     this.addFeatures(this.car.engine_capacity, this.car.power, this.car.transmission, this.car.drive);
-    this.addStatus(this.car.status ? this.car.status : '');
+    this.addStatus('В наличии');
     this.addPrice(this.car.price);
     this.addAdvansedPrice();
     this.addLocation(this.car.location ? this.car.location : 'Минск');
@@ -63,7 +63,7 @@ export class CarBuilder {
       'inner': [{
         'elem': 'img',
         'attributes': {
-          'src': 'http://dev.mitsubishi.by' + image
+          'src': 'http://dev.mitsubishi.by/'+ image
         },
       }]
     }))

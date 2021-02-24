@@ -1,11 +1,11 @@
-export function priceRangeSlider(min, max) {
-  const priceSlider = document.getElementById("slider-range");
-  const minPrice = document.getElementById("minPrice");
-  const maxPrice = document.getElementById("maxPrice");
-  const inputs = [minPrice, maxPrice];
-  if (priceSlider) {
-    noUiSlider.create(priceSlider, {
-      start: [min + 10000, max - 20000],
+export function priceRangeSlider(min, max,patch,index) {
+  const priceSlider = document.querySelectorAll(patch);
+  const minPrice = document.querySelectorAll(".minPrice");
+  const maxPrice = document.querySelectorAll(".maxPrice");
+  const inputs = [minPrice[index], maxPrice[index]];
+  if (priceSlider[index]) {
+    noUiSlider.create(priceSlider[index], {
+      start: [min , max ],
       tooltips: true,
       connect: true,
       padding: 0,
@@ -15,7 +15,7 @@ export function priceRangeSlider(min, max) {
       },
     });
 
-    priceSlider.noUiSlider.on("update", function (values, handle) {
+    priceSlider[index].noUiSlider.on("update", function (values, handle) {
       let x = Math.round(values[handle]);
       let d = x.toString().replace(/(\d{1,3})(?=((\d{3})*)$)/g, " $1");
       inputs[handle].value = d;
@@ -25,7 +25,7 @@ export function priceRangeSlider(min, max) {
       let v = value;
       v = v.replace(/\s+/g, "");
       arr[i] = v;
-      priceSlider.noUiSlider.set(arr);
+      priceSlider[index].noUiSlider.set(arr);
     };
     inputs.forEach((element, index) => {
       element.addEventListener("change", (event) => {
@@ -34,3 +34,4 @@ export function priceRangeSlider(min, max) {
     });
   }
 }
+

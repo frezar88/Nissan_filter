@@ -36,7 +36,7 @@
                             </div>
                             <div class="filter-header__online-payment">
                                 <label class="filter-header__switch">
-                                    <input type="checkbox" id="header__switch" checked>
+                                    <input type="checkbox" id="header__switch">
                                     <span class="slider round"></span>
                                 </label>
                                 <label for="header__switch">
@@ -48,38 +48,87 @@
                     </div>
                     <div class="filter-list">
                         <div class="filter-list__wrapper">
-                            <form method="dialog">
-                                <!-- <div class="filter-list__model filter-list-block">
-                                    <span class="accordion">Модель</span>
-                                    <div class="filter-list__content">
-                                        <div class="additionally-close"></div>
-                                        <div class="filter-list__item">
-                                            <label name="model" value="Murano">
-                                                <input type="checkbox">
-                                                <span>Murano</span>
-                                            </label>
-                                        </div>
-                                        <div class="filter-list__item">
-                                            <label name="model" value="Qashqai2020">
-                                                <input type="checkbox">
-                                                <span>Qashqai 2020</span>
-                                            </label>
-                                        </div>
-                                        <div class="filter-list__item">
-                                            <label name="model" value="Terrano">
-                                                <input type="checkbox">
-                                                <span>Terrano</span>
-                                            </label>
-                                        </div>
-                                        <div class="filter-list__item">
-                                            <label name="model" value="X-Trail2020">
-                                                <input type="checkbox">
-                                                <span>X-Trail 2020</span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div> -->
-                                <div class="filter-list__complete-set filter-list-block">
+                            <form method="dialog" class="form" id="form">
+                                <input type="checkbox" class="change">
+                            </form>
+                            <div class="filter-list__clearbtn">
+                                <button type="reset">Очистить фильтр</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-show__car">
+                        <div class="btn-show__car-wrapper">
+                            <button class="btn-show">Показать <span class="count">N</span> авто</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="result-auto">
+                <div class="result-auto__header">
+                    <div class="button__filter-show">
+                        <p>Фильтр</p>
+                        <div class="button__text">
+                            <span class="count">1&nbsp &nbsp</span>
+                            <span>&nbsp автомобиль</span>
+                            <div class="white-arrow">
+                                <img src="img/white-arrow.svg" alt="#">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header__wrapper">
+
+                        <div class="header__title">
+                            <div>
+                                <h4>Сортировать по &nbsp </h4>
+                            </div>
+                            <div id="pyramid">
+                                <div>цене</div>
+                                <div>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="header__trade-in">
+                            <label class="trade-in__switch">
+                                <input type="checkbox" id="trade-in_switch">
+                                <span class="slider round"></span>
+                            </label>
+                            <div class="trade-in__text">
+                                <label for="trade-in_switch">
+                                    <h5>Цена с учётом Trade-in</h5>
+                                    <a href="#">Оцените свой автомобиль</a>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="result-body">
+                    <div class="car-list">
+                        <div class="car-list__wrapper">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="result-footer">
+                    <button>показать ещё</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/jquery-3.3.1.slim.min.js"></script>
+    <script src="scripts/nouislider.min.js"></script>
+    <script type="module" src="scripts/main.js"></script>
+</body>
+
+</html>
+
+
+
+
+<!-- <div class="filter-list__complete-set filter-list-block">
                                     <span class="accordion">Комплектация</span>
                                     <div class="filter-list__content">
                                         <div class="additionally-close"></div>
@@ -284,263 +333,4 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="filter-list__gearbox filter-list-block">
-                                    <span class="accordion">Коробка передач</span>
-                                    <div class="filter-list__content">
-                                        <div class="additionally-close"></div>
-                                        <div class="filter-list__item">
-                                            <label name="gearbox" value="manual"><input
-                                                    type="checkbox"><span>МКПП</span></label>
-                                        </div>
-                                        <div class="filter-list__item">
-                                            <label name="gearbox" value="variator"><input type="checkbox">
-                                                <span>Вариатор</span>
-                                            </label>
-                                        </div>
-                                        <div class="filter-list__item">
-                                            <label name="gearbox" value="auto"><input type="checkbox">
-                                                <span>АКПП</span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="filter-list__wheel-drive filter-list-block">
-                                    <span class="accordion">Привод</span>
-                                    <div class="filter-list__content">
-                                        <div class="additionally-close"></div>
-                                        <div class="filter-list__item">
-                                            <input type="checkbox" id="front-wheel-drive"><label
-                                                for="front-wheel-drive"><span>Передний привод</span></label>
-                                        </div>
-                                        <div class="filter-list__item">
-                                            <input type="checkbox" id="full-wheel-drive"><label
-                                                for="full-wheel-drive"><span>Полный привод</span></label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="filter-list__fuel filter-list-block">
-                                    <span class="accordion">Топливо</span>
-                                    <div class="filter-list__content">
-                                        <div class="additionally-close"></div>
-                                        <div class="filter-list__item">
-                                            <input type="checkbox" id="gasoline"><label
-                                                for="gasoline"><span>Бензин</span></label>
-                                        </div>
-                                        <div class="filter-list__item">
-                                            <input type="checkbox" id="diesel"><label
-                                                for="diesel"><span>Дизель</span></label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="filter-list__engine-volume filter-list-block">
-                                    <span class="accordion">Объём двигателя</span>
-                                    <div class="filter-list__content">
-                                        <div class="additionally-close"></div>
-                                        <div class="filter-list__item">
-                                            <input type="checkbox" id="engine-volume_1.2"><label
-                                                for="engine-volume_1.2"><span>1.2</span></label>
-                                        </div>
-                                        <div class="filter-list__item">
-                                            <input type="checkbox" id="engine-volume_1.6"><label
-                                                for="engine-volume_1.6"><span>1.6</span></label>
-                                        </div>
-                                        <div class="filter-list__item">
-                                            <input type="checkbox" id="engine-volume_2.0"><label
-                                                for="engine-volume_2.0"><span>2.0</span></label>
-                                        </div>
-                                        <div class="filter-list__item">
-                                            <input type="checkbox" id="engine-volume_2.5"><label
-                                                for="engine-volume_2.5"><span>2.5</span></label>
-                                        </div>
-                                        <div class="filter-list__item">
-                                            <input type="checkbox" id="engine-volume_3.5"><label
-                                                for="engine-volume_3.5"><span>3.5</span></label>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="filter-list__price filter-list-block">
-                                    <span class="accordion">Цена</span>
-                                    <div class="filter-list__content">
-                                        <div class="additionally-close additionally-close__off" id="noShow"></div>
-                                        <div class="price-input">
-                                            <input id="minPrice" type="text">
-                                            <input id="maxPrice" type="text">
-                                        </div>
-                                        <div class="slider-wrapper">
-                                            <div id="slider-range"></div>
-                                        </div>
-                                        <div class="margin"></div>
-                                    </div>
-                                </div>
-                                <!-- <div class="filter-list__year filter-list-block">
-                                    <span class="accordion">Год выпуска</span>
-                                    <div class="filter-list__content">
-                                        <div class="additionally-close"></div>
-                                        <div class="filter-list__item">
-                                            <input type="checkbox" id="year-2020"><label
-                                                for="year-2020"><span>2020</span></label>
-                                        </div>
-                                        <div class="filter-list__item">
-                                            <input type="checkbox" id="year-2021"><label
-                                                for="year-2021"><span>2021</span></label>
-                                        </div>
-                                    </div>
                                 </div> -->
-                                <div class="filter-list__dealer filter-list-block">
-                                    <span class="accordion">Дилер</span>
-                                    <div class="filter-list__content">
-                                        <div class="additionally-close"></div>
-                                        <h4>Минск</h4>
-                                        <div class="filter-list__item">
-                                            <input type="checkbox" id="Derz"><label for="Derz"><span>пр-т Дзержинского,
-                                                    134</span></label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="filter-list__color filter-list-block">
-                                    <span class="accordion" id="accColor">Цвет</span>
-                                    <div class="filter-list__content">
-                                        <div class="additionally-close additionally-close__off"></div>
-                                        <div class="flex-block">
-                                            <div class="filter-list__item">
-                                                <input type="checkbox" id="grey">
-                                                <label for="grey">
-                                                    <div>Серый</div><span><img src="img/arrow.svg" alt="#"></span>
-                                                </label>
-                                            </div>
-                                            <div class="filter-list__item">
-                                                <input type="checkbox" id="white">
-                                                <label for="white">
-                                                    <div>Белый</div><span><img src="img/arrow.svg" alt="#"></span>
-                                                </label>
-                                            </div>
-                                            <div class="filter-list__item">
-                                                <input type="checkbox" id="black">
-                                                <label for="black">
-                                                    <div>черный</div><span><img src="img/arrow.svg" alt="#"></span>
-                                                </label>
-                                            </div>
-                                            <div class="filter-list__item">
-
-                                                <input type="checkbox" id="white-grey">
-                                                <label for="white-grey">
-                                                    <div>Серебряный</div><span><img src="img/arrow.svg" alt="#"></span>
-                                                </label>
-                                            </div>
-                                            <div class="filter-list__item">
-                                                <input type="checkbox" id="brown">
-                                                <label for="brown">
-                                                    <div>Коричневый</div><span><img src="img/arrow.svg" alt="#"></span>
-                                                </label>
-                                            </div>
-                                            <div class="filter-list__item">
-                                                <input type="checkbox" id="orange">
-                                                <label for="orange">
-                                                    <div>Оранжевый</div><span><img src="img/arrow.svg" alt="#"></span>
-                                                </label>
-                                            </div>
-                                            <div class="filter-list__item">
-                                                <input type="checkbox" id="blue">
-                                                <label for="blue">
-                                                    <div>Синий</div><span><img src="img/arrow.svg" alt="#"></span>
-                                                </label>
-                                            </div>
-                                            <div class="filter-list__item">
-                                                <input type="checkbox" id="green">
-                                                <label for="green">
-                                                    <div>Зеленый</div><span><img src="img/arrow.svg" alt="#"></span>
-                                                </label>
-                                            </div>
-                                            <div class="filter-list__item">
-                                                <input type="checkbox" id="red">
-                                                <label for="red">
-                                                    <div>Красный</div><span><img src="img/arrow.svg" alt="#"></span>
-                                                </label>
-                                            </div>
-                                            <div class="filter-list__item">
-                                                <input type="checkbox" id="sky-blue">
-                                                <label for="sky-blue">
-                                                    <div>Голубой</div><span><img src="img/arrow.svg" alt="#"></span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="margin-box">d</div>
-                                    </div>
-                                </div>
-                            </form>
-                            <div class="filter-list__clearbtn">
-                                <button type="reset">Очистить фильтр</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="btn-show__car">
-                        <div class="btn-show__car-wrapper">
-                            <button class="btn-show">Показать <span class="count">N</span> авто</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="result-auto">
-                <div class="result-auto__header">
-                    <div class="button__filter-show">
-                        <p>Фильтр</p>
-                        <div class="button__text">
-                            <span class="count">1&nbsp &nbsp</span>
-                            <span>&nbsp автомобиль</span>
-                            <div class="white-arrow">
-                                <img src="img/white-arrow.svg" alt="#">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="header__wrapper">
-
-                        <div class="header__title">
-                            <div>
-                                <h4>Сортировать по &nbsp </h4>
-                            </div>
-                            <div id="pyramid">
-                                <div>цене</div>
-                                <div>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="header__trade-in">
-                            <label class="trade-in__switch">
-                                <input type="checkbox" checked id="trade-in_switch">
-                                <span class="slider round"></span>
-                            </label>
-                            <div class="trade-in__text">
-                                <label for="trade-in_switch">
-                                    <h5>Цена с учётом Trade-in</h5>
-                                    <a href="#">Оцените свой автомобиль</a>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="result-body">
-                    <div class="car-list">
-                        <div class="car-list__wrapper">
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="result-footer">
-                    <button>показать ещё</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="scripts/nouislider.min.js"></script>
-    <script type="module" src="/scripts/main.js"></script>
-</body>
-
-</html>
-
-</html>

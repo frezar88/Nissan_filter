@@ -2,136 +2,11 @@
 
 export class Filter {
 
-  json = {
-    "status": true, "data": [
-      {
-        "id": "model", "name": "Модель", "type": "ems",
-        "options":
-          [
-            {
-              "category": "ASX", "disabled": false,
-              "options":
-                [
-                  { "name": "Intense", "disabled": false },
-                  { "name": "Black Edition", "disabled": false },
-                  { "name": "Instyle", "disabled": false }
-                ]
-            },
-            {
-              "category": "Pajero Sport", "disabled": false, "options":
-                [
-                  { "name": "Instyle +", "disabled": false },
-                  { "name": "Instyle+", "disabled": false }
-                ]
-            },
-            {
-              "category": "L200", "disabled": false, "options":
-                [
-                  { "name": "Invite +", "disabled": false },
-                  { "name": "Intense+", "disabled": false }
-                ]
-            },
-            {
-              "category": "Outlander", "disabled": false, "options":
-                [
-                  { "name": "Intense+", "disabled": false },
-                  { "name": "Black Edition", "disabled": false },
-                  { "name": "Ultimate", "disabled": false },
-                  { "name": "Ultimate (7 мест)", "disabled": false },
-                  { "name": "Ultimate (beige)", "disabled": false },
-                  { "name": "Instyle 4WD", "disabled": false },
-                  { "name": "GT", "disabled": false }
-                ]
-            }
-          ]
-      },
-      {
-        "id": "year", "name": "Год", "type": "ms", "options":
-          [
-            { "name": "2020", "disabled": false },
-            { "name": "2021", "disabled": false }
-          ]
-      },
-      {
-        "id": "price", "name": "Цена", "type": "rs", "options":
-          { "min": "65050", "max": "118000", "valueSign": "BYN", "disabled": false }
-      },
-      {
-        "id": "trade-in", "name": "Выгода по trade-in", "type": "rs", "options":
-          { "min": "0", "max": "7000", "valueSign": "BYN", "disabled": false }
-      },
-      {
-        "id": "engine", "name": "Двигатель", "type": "ems", "options":
-          [
-            {
-              "category": "бензин", "disabled": false, "options":
-                [
-                  { "name": "2,0", "disabled": false },
-                  { "name": "2,4", "disabled": false },
-                  { "name": "3,0", "disabled": false }
-                ]
-            },
-            {
-              "category": "дизель", "disabled": false, "options":
-                [
-                  { "name": "2,4 турбодизель", "disabled": false }
-                ]
-            }
-          ]
-      },
-      {
-        "id": "transmission", "name": "КПП", "type": "ms", "options":
-          [
-            { "name": "автомат (CVT)", "disabled": false },
-            { "name": "автомат", "disabled": false },
-            { "name": "механика", "disabled": false }
-          ]
-      },
-      {
-        "id": "drive", "name": "КПП", "type": "ms", "options":
-          [
-            { "name": "полный привод (4WD)", "disabled": false },
-            { "name": "передний привод (2WD)", "disabled": false }
-          ]
-      },
-      {
-        "id": "state", "name": "Состояние", "type": "ms", "options":
-          [
-            { "name": "Новый", "disabled": false }
-          ]
-      },
-      {
-        "id": "color", "name": "Цвет", "type": "cs", "options":
-          [
-            { "name": "синий металлик", "color": "#0000ff", "disabled": false },
-            { "name": "коричневый металлик", "color": "#663300", "disabled": false },
-            { "name": "оранжевый перламутр", "color": "#ff9900", "disabled": false },
-            { "name": "красный металлик", "color": "#ff0000", "disabled": false },
-            { "name": "белый базовый", "color": "#ffffff", "disabled": false },
-            { "name": "черный металлик", "color": "#000000", "disabled": false },
-            { "name": "серый металлик", "color": "#515151", "disabled": false },
-            { "name": "белый перламутр", "color": "#FFFAFA", "disabled": false },
-            { "name": "серебристый металлик", "color": "#C0C0C0", "disabled": false }
-          ]
-      }
-    ]
-  }
   filterContaner;
   generalBlockFilter;
-  constructor() {
-    this.generalBlockCreate(this.json.data)
-
-    this.assembler()
-    this.show(this.filterContaner)
-
-  }
-
-  assembler(data1) {
-    this.createGeneralBlock()
-
-
-    return this.filterContaner
-  }
+  constructor(data) {
+    this.generalBlockCreate(data)
+}
 
   createElement(settings) {
     let dom = document.createElement(settings.elem);
@@ -156,32 +31,88 @@ export class Filter {
 
   generalBlockCreate(data) {
     data.forEach(element => {
+
       this.createGeneralBlock(element.name, element.id)
-      console.log(element)
       this.append('.filter-list__wrapper form', this.filterContaner)
-      
+
       if (element.name == 'Модель') {
-        element.options.forEach(element => {
-          this.createCheckBox(element.category)
-         this.append('.filter-list__model .filter-list__content', this.filterContaner)
-       });
+        element.options.forEach(options => {
+          this.createCheckBox(options.category, options.disabled, element.id)
+          this.append('.filter-list__model .filter-list__content', this.filterContaner)
+        });
       }
       if (element.name == 'Год') {
-        element.options.forEach(element => {
-          this.createCheckBox(element.name)
-          
+        element.options.forEach(options => {
+
+          this.createCheckBox(options.name, options.disabled,element.id)
+
           this.append('.filter-list__year .filter-list__content', this.filterContaner)
         });
       }
       if (element.name == 'Цена') {
+    
         for (const key in element.options) {
-          if (key == 'min'){
-            this.createRange()
+          if (key == 'min') {
+            this.createRange(element.id)
             this.append('.filter-list__price .filter-list__content', this.filterContaner)
           }
         }
       }
-      
+      if (element.name == 'Выгода по trade-in') {
+        for (const key in element.options) {
+          if (key == 'min') {
+            this.createRange(element.id)
+            this.append('.filter-list__trade-in .filter-list__content', this.filterContaner)
+          }
+        }
+      }
+
+      if (element.id == 'engine') {
+        element.options.forEach(options => {
+          this.createCheckBox(options.category, options.disabled)
+          let fuel = document.createElement('h4')
+          fuel.innerText = options.category
+          this.append('.filter-list__engine .filter-list__content', fuel)
+          options.options.forEach(ele => {
+            this.createCheckBox(ele.name, ele.disabled, element.id)
+            this.append('.filter-list__engine .filter-list__content', this.filterContaner)
+            });
+        });
+      }
+
+      if (element.id == 'transmission') {
+        element.options.forEach(options => {
+          this.createCheckBox(options.name, options.disabled, element.id)
+          this.append('.filter-list__transmission .filter-list__content', this.filterContaner)
+        });
+      }
+
+      if (element.id == 'drive') {
+        element.options.forEach(options => {
+          this.createCheckBox(options.name, options.disabled, element.id)
+          this.append('.filter-list__drive .filter-list__content', this.filterContaner)
+        });
+      }
+
+      if (element.id == 'state') {
+        element.options.forEach(options => {
+          this.createCheckBox(options.name, options.disabled, element.id)
+          this.append('.filter-list__state .filter-list__content', this.filterContaner)
+        });
+      }
+      if (element.id == 'color') {
+        let colorBlok = document.createElement('div')
+        colorBlok.classList.add('flex-block')
+        let mar = document.createElement('div')
+        mar.classList.add('margin-box')
+        this.append('.filter-list__color .filter-list__content', colorBlok)
+        this.append('.filter-list__color .filter-list__content', mar)
+        element.options.forEach(options => {
+          this.createColorblock(element.id, options.name, options.color, options.disabled)
+          this.append('.flex-block', this.filterContaner)
+        });
+      }
+
     });
   }
 
@@ -195,45 +126,42 @@ export class Filter {
       ]
     });
   }
-  createCheckBox(value) {
+  createCheckBox(value, status,name) {
     return this.filterContaner = this.createElement({
       'elem': 'div',
       'attributes': { 'class': 'filter-list__item' }
       , 'inner': [{
         'elem': 'label',
-        'attributes': { 'name': 'model', 'value': value }, 'inner': [{ 'elem': 'input', 'attributes': { type: 'checkbox' } }, { 'elem': 'span', 'inner': value }]
+        'attributes': { 'class': status },
+        'inner': [{ 'elem': 'input', 'attributes': { type: 'checkbox', 'name': name, 'value': value,  } },
+        { 'elem': 'span', 'inner': value }
+        ]
       }]
     })
   }
-  createRange() {
+  createRange(name) {
     return this.filterContaner = this.createElement({
       'elem': 'div',
-      'attributes': {
-        'class':'filter-list__item'
-      }
-      
-      
+      'attributes': { 'class': 'filter-list__item' },
+      'inner': [{
+        'elem': 'div', 'attributes': { 'class': 'price-input' }, 'inner': [{ 'elem': 'input', 'attributes': { 'class': 'minPrice', 'type': 'text','name':name} }, { 'elem': 'input', 'attributes': { 'class': 'maxPrice','name':name,'type': 'text',} }]
+      }, { 'elem': 'div', 'attributes': { 'class': 'slider-wrapper' }, 'inner': [{ 'elem': 'div', 'attributes': { 'class': 'slider-range' } }] }]
     })
   }
-
-
-
-
-
-
-
-
+  
+  createColorblock(name, value,color,status) {
+    return this.filterContaner = this.createElement({
+      'elem': 'div',
+      'attributes': { 'class': 'filter-list__item' },
+      'inner': [{
+        'elem': 'label', 'attributes': { 'style': 'background-color:' +color+';','class':status },
+        'inner': [{ 'elem': 'input', 'attributes': { 'name': name, 'value': value,  'type': 'checkbox' } }, { 'elem': 'div', 'inner': value }, { 'elem': 'span', 'inner': [{ 'elem': 'img', 'attributes': { 'src':'img/arrow.svg'}}]}]},]
+    })
+  }
 
 
   append(path, content) {
     document.querySelector(path).append(content);
   }
-  show(z) {
-    console.log(z)
 
-    let xz = document.querySelector('.filter-list__model filter-list-block')
-    console.log(xz)
-
-
-  }
 }
