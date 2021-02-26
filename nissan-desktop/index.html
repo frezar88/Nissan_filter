@@ -29,7 +29,7 @@
                             <div class="filter-header__found-auto btnshow__text">
                                 <span>Найден</span>
                                 <span class="count">1</span>
-                                <span>автомобиль</span>
+                                <span>авто</span>
                             </div>
                             <div class="filter-header__special">
                                 <h5>Спецпредложения</h5>
@@ -50,6 +50,15 @@
                         <div class="filter-list__wrapper">
                             <form method="dialog" class="form" id="form">
                                 <input type="checkbox" class="change">
+                                <div class="filter-list__complete-set filter-list-block">
+                                    <span class="accordion">Комплектация</span>
+                                    <div class="filter-list__content">
+                                        <div class="additionally-close"></div>
+                                        <div class="filter-list__content-wrapper" id="scrollStyle-1">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
                             </form>
                             <div class="filter-list__clearbtn">
                                 <button type="reset">Очистить фильтр</button>
@@ -118,7 +127,7 @@
             </div>
         </div>
     </div>
-    <script src="scripts/jquery-3.3.1.slim.min.js"></script>
+   
     <script src="scripts/nouislider.min.js"></script>
     <script type="module" src="scripts/main.js"></script>
 </body>
@@ -128,209 +137,3 @@
 
 
 
-<!-- <div class="filter-list__complete-set filter-list-block">
-                                    <span class="accordion">Комплектация</span>
-                                    <div class="filter-list__content">
-                                        <div class="additionally-close"></div>
-                                        <div class="filter-list__content-wrapper" id="scrollStyle-1">
-                                            <div class="filter-list__item-murano">
-                                                <h4>Murano</h4>
-                                                <div class="filter-list__item filter-list__item-murano">
-                                                    <label name="complectation" value="High">
-                                                        <input type="checkbox">
-                                                        <span>High</span>
-                                                    </label>
-                                                </div>
-                                                <div class="filter-list__item filter-list__item-murano">
-                                                    <label name="complectation" value="High+">
-                                                        <input type="checkbox">
-                                                        <span>High+</span>
-                                                    </label>
-                                                </div>
-                                                <div class="filter-list__item filter-list__item-murano">
-                                                    <label name="complectation" value="Mid">
-                                                        <input type="checkbox">
-                                                        <span>Mid</span>
-                                                    </label>
-                                                </div>
-                                                <div class="filter-list__item filter-list__item-murano">
-                                                    <label name="complectation" value="Top">
-                                                        <input type="checkbox">
-                                                        <span>Top</span>
-                                                    </label>
-                                                </div>
-                                                <div class="filter-list__item filter-list__item-murano">
-                                                    <label name="complectation" value="Top+">
-                                                        <input type="checkbox">
-                                                        <span>Top+</span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="filter-list__item-qashqai">
-                                                <h4>Qashqai 2020</h4>
-                                                <div class="filter-list__item filter-list__item-qashqai">
-                                                    <label name="complectation" value="LeTop">
-                                                        <input type="checkbox">
-                                                        <span>LE Top</span>
-                                                    </label>
-                                                </div>
-                                                <div class="filter-list__item filter-list__item-qashqai">
-                                                    <label name="complectation" value="LeTopCoffee">
-                                                        <input type="checkbox">
-                                                        <span>LE Top Coffee</span>
-                                                    </label>
-                                                </div>
-                                                <div class="filter-list__item filter-list__item-qashqai">
-                                                    <label name="complectation" value="LeYandex">
-                                                        <input type="checkbox">
-                                                        <span>LE Yandex</span>
-                                                    </label>
-                                                </div>
-                                                <div class="filter-list__item filter-list__item-qashqai">
-                                                    <label name="complectation" value="LeYandexCoffee">
-                                                        <input type="checkbox">
-                                                        <span>LE Yandex Coffee</span>
-                                                    </label>
-                                                </div>
-                                                <div class="filter-list__item filter-list__item-qashqai">
-                                                    <label for="qashqai_SE">
-                                                        <input type="checkbox">
-                                                        <span>SE</span>
-                                                    </label>
-                                                </div>
-                                                <div class="filter-list__item filter-list__item-qashqai">
-                                                    <label name="complectation" value="SeTop">
-                                                        <input type="checkbox">
-                                                        <span>SE Top</span>
-                                                    </label>
-                                                </div>
-                                                <div class="filter-list__item filter-list__item-qashqai">
-                                                    <label name="complectation" value="SeTopCoffee">
-                                                        <input type="checkbox">
-                                                        <span>SE Top Coffee</span>
-                                                    </label>
-                                                </div>
-                                                <div class="filter-list__item filter-list__item-qashqai">
-                                                    <label name="complectation" value="SeYandex">
-                                                        <input type="checkbox">
-                                                        <span>SE Yandex</span>
-                                                    </label>
-                                                </div>
-                                                <div class="filter-list__item filter-list__item-qashqai">
-                                                    <label name="complectation" value="SeYandexCoffee">
-                                                        <input type="checkbox">
-                                                        <span>SE Yandex Coffee</span>
-                                                    </label>
-                                                </div>
-                                                <div class="filter-list__item filter-list__item-qashqai">
-                                                    <label name="complectation" value="Se+">
-                                                        <input type="checkbox">
-                                                        <span>SE+</span>
-                                                    </label>
-                                                </div>
-                                                <div class="filter-list__item filter-list__item-qashqai">
-                                                    <label name="complectation" value="XE">
-                                                        <input type="checkbox">
-                                                        <span>XE</span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="filter-list__item-terrano">
-                                                <h4>Terrano</h4>
-                                                <div class="filter-list__item filter-list__item-terrano">
-                                                    <label name="complectation" value="Comfort">
-                                                        <input type="checkbox">
-                                                        <span>Comfort</span>
-                                                    </label>
-                                                </div>
-                                                <div class="filter-list__item filter-list__item-terrano">
-                                                    <label name="complectation" value="Elegance+">
-                                                        <input type="checkbox">
-                                                        <span>Elegance+</span>
-                                                    </label>
-                                                </div>
-                                                <div class="filter-list__item filter-list__item-terrano">
-                                                    <label name="complectation" value="ElegancePlus">
-                                                        <input type="checkbox">
-                                                        <span>Elegance Plus</span>
-                                                    </label>
-                                                </div>
-                                                <div class="filter-list__item filter-list__item-terrano">
-                                                    <label name="complectation" value="Tekna">
-                                                        <input type="checkbox">
-                                                        <span>Tekna</span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="filter-list__item-xtrail">
-                                                <h4>X-Trail 2020</h4>
-                                                <div class="filter-list__item filter-list__item-xtrail">
-                                                    <label name="complectation" value="LE">
-                                                        <input type="checkbox">
-                                                        <span>LE</span>
-                                                    </label>
-                                                </div>
-                                                <div class="filter-list__item filter-list__item-xtrail">
-                                                    <label name="complectation" value="LeCoffee+">
-                                                        <input type="checkbox">
-                                                        <span>LE Coffee+</span>
-                                                    </label>
-                                                </div>
-                                                <div class="filter-list__item filter-list__item-xtrail">
-                                                    <label name="complectation" value="LeTop">
-                                                        <input type="checkbox">
-                                                        <span>LE Top</span>
-                                                    </label>
-                                                </div>
-                                                <div class="filter-list__item filter-list__item-xtrail">
-                                                    <label name="complectation" value="LeTopCoffee">
-                                                        <input type="checkbox">
-                                                        <span>LE Top Coffee</span>
-                                                    </label>
-                                                </div>
-                                                <div class="filter-list__item filter-list__item-xtrail">
-                                                    <label name="complectation" value="LE Yandex">
-                                                        <input type="checkbox">
-                                                        <span>LE Yandex</span>
-                                                    </label>
-                                                </div>
-                                                <div class="filter-list__item filter-list__item-xtrail">
-                                                    <label name="complectation" value="LeYandexCoffee">
-                                                        <input type="checkbox">
-                                                        <span>LE Yandex Coffee</span>
-                                                    </label>
-                                                </div>
-                                                <div class="filter-list__item filter-list__item-xtrail">
-                                                    <label name="complectation" value="SE">
-                                                        <input type="checkbox">
-                                                        <span>SE</span>
-                                                    </label>
-                                                </div>
-                                                <div class="filter-list__item filter-list__item-xtrail">
-                                                    <label name="complectation" value="SeTop">
-                                                        <input type="checkbox">
-                                                        <span>SE Top</span>
-                                                    </label>
-                                                </div>
-                                                <div class="filter-list__item filter-list__item-xtrail">
-                                                    <label name="complectation" value="SeTopCoffee">
-                                                        <input type="checkbox">
-                                                        <span>SE Top Coffee</span>
-                                                    </label>
-                                                </div>
-                                                <div class="filter-list__item filter-list__item-xtrail">
-                                                    <label name="complectation" value="SeYandex">
-                                                        <input type="checkbox">
-                                                        <span>SE Yandex</span>
-                                                    </label>
-                                                </div>
-                                                <div class="filter-list__item filter-list__item-xtrail">
-                                                    <label name="complectation" value="XE">
-                                                        <input type="checkbox">
-                                                        <span>XE</span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> -->

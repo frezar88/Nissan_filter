@@ -134,6 +134,7 @@ body {
 .filter-header__found-auto {
     padding: 28px 0;
     text-align: center;
+    opacity: 0;
 }
 
 .filter-header__found-auto span {
@@ -227,6 +228,10 @@ input:checked+.slider:before {
     position: relative;
 }
 
+.form{
+    display: flex;
+    flex-direction: column;
+}
 .filter input::before {
     position: absolute;
     content: url(../img/accept-arrow-red.svg);
@@ -310,13 +315,14 @@ input:checked+.slider:before {
 }
 
 .filter-list__content .filter-list__content-wrapper {
-    max-height: 300px;
+    max-height: 360px;
     overflow-y: scroll;
 }
 
 .filter-list__content-wrapper::-webkit-resizer {
     background-color: #666;
 }
+
 
 .filter-list__item {
     display: -webkit-box;
@@ -358,8 +364,10 @@ input:checked+.slider:before {
 
 .filter-list__complete-set {
     position: relative;
-    max-height: 400px;
+    /*max-height: 400px;*/
 }
+
+
 
 .filter-list__year .filter-list__content{
     display: flex;
@@ -403,6 +411,10 @@ margin-bottom: 20px;
 .filter-list__complete-set h4 {
     font-family: MMC-Bold;
     margin-bottom: 5px;
+}
+.filter-list__complete-set h4{
+    margin-bottom: 0;
+    margin: 10px 4px;
 }
 
 .filter-list__color .filter-list__content {
@@ -735,8 +747,9 @@ margin-bottom: 20px;
 }
 
 .car-list__img img {
-    transform: scale(1.1);
+    transform: scale(1.0);
     width: 100%;
+    margin-top: 20px;
 }
 
 .car-list__title h3 {
@@ -855,6 +868,7 @@ margin-bottom: 20px;
 }
 
 .result-footer button {
+    display: none;
     position: relative;
     padding: 0 57px 0 24px;
     height: 56px;
@@ -981,6 +995,12 @@ margin-bottom: 20px;
     .additionally-close {
         z-index: 1;
     }
+    .filter-list__trade-in .additionally-close,.filter-list__color .additionally-close{
+        display: none;
+    }
+     .filter-list__trade-in .accordion::before {
+         background-color: unset;
+     }
     .additionally-close__off {
         display: none;
     }
@@ -1082,8 +1102,8 @@ margin-bottom: 20px;
     .filter-close img {
         display: inline-block;
         padding: 13px;
-        width: 30px;
-        height: 30px;
+        width: 50px;
+        height: 50px;
     }
     .show__car {
         position: relative;
@@ -1226,4 +1246,7 @@ margin-bottom: 20px;
     overflow-y: scroll;
     /* также может быть auto */
     -webkit-overflow-scrolling: touch;
+}
+.filter-list__model .filter-list-block{
+    order: -1;
 }

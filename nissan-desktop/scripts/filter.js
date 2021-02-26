@@ -39,8 +39,26 @@ export class Filter {
         element.options.forEach(options => {
           this.createCheckBox(options.category, options.disabled, element.id)
           this.append('.filter-list__model .filter-list__content', this.filterContaner)
+          let modelMod = document.createElement('h4')
+          modelMod.setAttribute('name', options.category)
+          modelMod.innerText = options.category
+          //////ПОТОМ ПРАВИТЬ
+          if (modelMod.innerText != 'Renault Megane III' && modelMod.innerText != 'Renault Megane II') {
+            this.append('.filter-list__complete-set .filter-list__content', modelMod)
+          }
+          
+          options.options.forEach(element2 => {
+            if (element2.name != null) {
+              this.createCheckBox(element2.name, element2.disabled, options.category)
+              this.append('.filter-list__complete-set .filter-list__content', this.filterContaner)
+            }
+
+          })
         });
       }
+
+      
+
       if (element.name == 'Год') {
         element.options.forEach(options => {
 
@@ -74,7 +92,8 @@ export class Filter {
           fuel.innerText = options.category
           this.append('.filter-list__engine .filter-list__content', fuel)
           options.options.forEach(ele => {
-            this.createCheckBox(ele.name, ele.disabled, element.id)
+            
+            this.createCheckBox(ele.name, ele.disabled, options.category)
             this.append('.filter-list__engine .filter-list__content', this.filterContaner)
             });
         });

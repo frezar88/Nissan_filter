@@ -88,18 +88,33 @@ export function sideBar() {
   const buttonSideBarShowWhiteArrow = document.querySelector(
     ".button__filter-show"
   );
-  const sideBar = document.querySelector(".filter");
-  const buttonCloseSideBar = document.querySelector(".filter-close img");
+  
 
-  function presBtnShowSideBar() {
+  function presBtnCloseSideBarAndpresBtnShowSideBar() {
+    const sideBar = document.querySelector(".filter");
+    const buttonCloseSideBar = document.querySelector(".filter-close img");
+    const buttonAddaptivShowCar = document.querySelector('.btn-show')
     buttonSideBarShowWhiteArrow.addEventListener("click", () => {
       sideBar.style.display = "block";
       body.classList.add("lock-position");
+    });
+    
+    buttonAddaptivShowCar.addEventListener("click", () => {
+      sideBar.style.display = "none";
+      body.classList.remove("lock-position");
     });
     buttonCloseSideBar.addEventListener("click", () => {
       sideBar.style.display = "none";
       body.classList.remove("lock-position");
     });
   }
-  presBtnShowSideBar();
+  presBtnCloseSideBarAndpresBtnShowSideBar();
+
+  let resetBtn = document.querySelector('.filter-list__clearbtn button')
+  resetBtn.addEventListener('click', function () {
+    let allCheckFilter = document.querySelectorAll('.form input[type="checkbox"]:checked')
+    allCheckFilter.forEach(element => {
+      element.click()
+    });
+  })
 }
