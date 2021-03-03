@@ -1,8 +1,10 @@
 
-export function CreateElementResultCarAndBtnShowMore(data, builder) {
+export function CreateElementResultCarAndBtnShowMore(data, builder,page) {
     
     let btnMore = document.querySelector('.result-footer button')
-    
+    btnMore.addEventListener('click', () => {
+        
+    })
     for (let i=0; i < data.length; i++) {
         
        
@@ -11,7 +13,8 @@ export function CreateElementResultCarAndBtnShowMore(data, builder) {
     
     
     let carItem = document.querySelectorAll('.car-list__item')
-    if (carItem.length == 0 || carItem.length < 12) {
+    
+    if (carItem.length == 0 || data.length!=15 ) {
         btnMore.style.display = 'none'
         btnMore.classList.add('noneDisp')
     }
@@ -21,7 +24,7 @@ export function CreateElementResultCarAndBtnShowMore(data, builder) {
         
     }
 
-    
+    return page
 }
 
 

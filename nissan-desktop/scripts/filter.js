@@ -6,6 +6,9 @@ export class Filter {
   generalBlockFilter;
   constructor(data) {
     this.generalBlockCreate(data)
+    this.modelBlockMove()
+    this.ChangeForm()
+    this.stateBlockMove()
 }
 
   createElement(settings) {
@@ -41,6 +44,7 @@ export class Filter {
           this.append('.filter-list__model .filter-list__content', this.filterContaner)
           let modelMod = document.createElement('h4')
           modelMod.setAttribute('name', options.category)
+          modelMod.classList.add('false')
           modelMod.innerText = options.category
           //////ПОТОМ ПРАВИТЬ
           if (modelMod.innerText != 'Renault Megane III' && modelMod.innerText != 'Renault Megane II') {
@@ -89,6 +93,8 @@ export class Filter {
         element.options.forEach(options => {
           this.createCheckBox(options.category, options.disabled)
           let fuel = document.createElement('h4')
+          fuel.setAttribute('name', options.category)
+          fuel.classList.add('false')
           fuel.innerText = options.category
           this.append('.filter-list__engine .filter-list__content', fuel)
           options.options.forEach(ele => {
@@ -152,7 +158,7 @@ export class Filter {
       , 'inner': [{
         'elem': 'label',
         'attributes': { 'class': status },
-        'inner': [{ 'elem': 'input', 'attributes': { type: 'checkbox', 'name': name, 'value': value,  } },
+        'inner': [{ 'elem': 'input', 'attributes': { type: 'checkbox', 'name': name , 'value': value, 'class':'inp'  } },
         { 'elem': 'span', 'inner': value }
         ]
       }]
@@ -174,7 +180,7 @@ export class Filter {
       'attributes': { 'class': 'filter-list__item' },
       'inner': [{
         'elem': 'label', 'attributes': { 'style': 'background-color:' +color+';','class':status },
-        'inner': [{ 'elem': 'input', 'attributes': { 'name': name, 'value': value,  'type': 'checkbox' } }, { 'elem': 'div', 'inner': value }, { 'elem': 'span', 'inner': [{ 'elem': 'img', 'attributes': { 'src':'img/arrow.svg'}}]}]},]
+        'inner': [{ 'elem': 'input', 'attributes': { 'name': name, 'value': value, 'type': 'checkbox', 'class': 'inp' } }, { 'elem': 'div', 'inner': value }, { 'elem': 'span', 'inner': [{ 'elem': 'img', 'attributes': { 'src':'img/arrow.svg'}}]}]},]
     })
   }
 
@@ -183,4 +189,40 @@ export class Filter {
     document.querySelector(path).append(content);
   }
 
+  modelBlockMove() {
+    let modelBlock = document.querySelector('.filter-list__model.filter-list-block')
+    modelBlock.setAttribute('style', 'order:-1;')
+  }
+  stateBlockMove() {
+    let modelBlock = document.querySelector('.filter-list__state.filter-list-block')
+    modelBlock.setAttribute('style', 'order:-2;')
+  }
+  
+  ChangeForm() {
+    let carPrice = document.querySelector('.filter-list__price .filter-list__content')
+    let carTradeIn = document.querySelector('.filter-list__trade-in .filter-list__content')
+    let inputsChange = document.querySelectorAll('.inp')
+    // inputsChange.forEach(element => {
+    //   element.addEventListener('click', () => {
+    //     let chang = document.querySelector('.change')
+        
+    //     setTimeout(() => {
+    //       chang.click()
+    //     }, 400);
+    //   })
+    // });
+    carPrice.addEventListener('mouseup', () => {
+      let chang = document.querySelector('.change')
+     
+      chang.click()
+      
+      
+    })
+    carTradeIn.addEventListener('mouseup', () => {
+      let chang = document.querySelector('.change')
+      
+        chang.click()
+      
+    })
+  }
 }

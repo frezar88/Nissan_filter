@@ -36,7 +36,7 @@ export class CarBuilder {
 
   createCar() {
 
-    this.createItem();
+    this.createItem(this.car.id);
     this.addImg(this.car.image);
     this.addTitle(this.car.name, this.car.year, this.car.win ? this.car.win : "");
     this.addFeatures(this.car.engine_capacity, this.car.power, this.car.transmission, this.car.drive);
@@ -46,11 +46,12 @@ export class CarBuilder {
     this.addLocation(this.car.location ? this.car.location : 'Минск');
     return this.carContainer;
   }
-  createItem() {
+  createItem(id) {
     return this.carContainer = this.createElement({
       'elem': 'div',
       'attributes': {
-        'class': 'car-list__item'
+        'class': 'car-list__item',
+        'data-car-id': id
       },
     });
   }
@@ -211,7 +212,7 @@ export class CarBuilder {
       }, 'inner': [{
         'elem': 'img',
         'attributes': {
-          'src': 'img/ScreenShot4.png',
+          'src': 'img/ArrowLocation.png',
           'alt':'#'
         }
       }, {
@@ -223,6 +224,8 @@ export class CarBuilder {
  
  append(path, content) {
    document.querySelector(path).appendChild(content);
- }
+  }
+  
+  
 
 }

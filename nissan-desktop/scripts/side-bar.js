@@ -1,6 +1,6 @@
 export function sideBar() {
   const acc = document.getElementsByClassName("accordion");
-  
+
   let i = 0;
   for (i = 0; i < acc.length; i++) {
     acc[i].addEventListener("click", function () {
@@ -10,8 +10,8 @@ export function sideBar() {
       if (content.style.maxHeight) {
         content.style.maxHeight = null;
       } else {
-        content.style.maxHeight = content.scrollHeight+50+"px";
-        
+        content.style.maxHeight = content.scrollHeight + 50 + "px";
+
         if (window.innerWidth < 768) {
           setTimeout(() => {
             this.scrollIntoView({ block: "center", behavior: "smooth" });
@@ -23,7 +23,7 @@ export function sideBar() {
       acc[i].click();
     }
   }
- 
+
 
   function filterColorSetOverflow() {
     let color = document.querySelector(".filter-list__color .accordion");
@@ -37,17 +37,17 @@ export function sideBar() {
       if (color.classList.value == "accordion") {
         content.style.overflow = "hidden";
       };
-      
+
     });
     let colorr = document.querySelector(
       ".filter-list__color .filter-list__content"
     );
-    
+
     window.addEventListener("resize", () => {
       if (colorr.classList.value == "accordion") {
         coll.style.overflow = "hidden";
       }
-      
+
     })
   }
   filterColorSetOverflow();
@@ -88,7 +88,7 @@ export function sideBar() {
   const buttonSideBarShowWhiteArrow = document.querySelector(
     ".button__filter-show"
   );
-  
+
 
   function presBtnCloseSideBarAndpresBtnShowSideBar() {
     const sideBar = document.querySelector(".filter");
@@ -98,7 +98,7 @@ export function sideBar() {
       sideBar.style.display = "block";
       body.classList.add("lock-position");
     });
-    
+
     buttonAddaptivShowCar.addEventListener("click", () => {
       sideBar.style.display = "none";
       body.classList.remove("lock-position");
@@ -110,11 +110,31 @@ export function sideBar() {
   }
   presBtnCloseSideBarAndpresBtnShowSideBar();
 
-  let resetBtn = document.querySelector('.filter-list__clearbtn button')
-  resetBtn.addEventListener('click', function () {
-    let allCheckFilter = document.querySelectorAll('.form input[type="checkbox"]:checked')
-    allCheckFilter.forEach(element => {
-      element.click()
-    });
-  })
+  function resetButtonFilter() {
+    let resetBtn = document.querySelector('.filter-list__clearbtn button')
+    resetBtn.addEventListener('click', function () {
+      let priceSlider = document.querySelectorAll('.slider-range');
+      priceSlider[0].noUiSlider.reset()
+      priceSlider[1].noUiSlider.reset()
+      let allCheckFilter = document.querySelectorAll('.form input[type="checkbox"]:checked')
+      allCheckFilter.forEach(element => {
+        element.click()
+        document.querySelector('.car-list__wrapper').innerHTML = '';
+
+      });
+    })
+  }
+  resetButtonFilter()
+  
+  function parsUrl() {
+    let url = window.location.href.replace('http://', '').replace('dev.', '').replace('mitsubishi.by/', '')
+    console.log(url)
+    if (url == 'new') {
+      document.querySelector('input [value="Новый"]').click()
+    }
+    if (url == 'bu') {
+      document.querySelector('input [value="Б/У"]').click()
+    }
+  }
+  parsUrl()
 }

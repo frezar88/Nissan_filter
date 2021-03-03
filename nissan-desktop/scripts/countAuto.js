@@ -2,7 +2,7 @@ export function countAuto() {
     let countSpan = document.querySelectorAll('.count')
     let carListIteam = document.querySelectorAll('.car-list__item')
     for (let i = 0; i < countSpan.length; i++) {
-        
+       
         countSpan[i].innerHTML = carListIteam.length
         if (countSpan[0].innerHTML==0) {
             countSpan[0].parentElement.style.opacity="0"
@@ -22,11 +22,11 @@ export function countAuto() {
             countSpan[2].nextSibling.nextSibling.style.opacity='0'
         }
         if (countSpan[2].innerHTML == 1) {
-            countSpan[2].nextSibling.nextSibling.innerHTML = '&nbsp &nbspавтомобиль'
+            countSpan[2].nextSibling.nextSibling.innerHTML = carListIteam.length+'&nbsp &nbspавтомобиль'
             countSpan[2].nextSibling.nextSibling.style.opacity = '1 0&nbsp &nbsp'
         }
         if (countSpan[2].innerHTML > 1) {
-            countSpan[2].nextSibling.nextSibling.innerHTML = '&nbsp &nbspавто'
+            countSpan[2].nextSibling.nextSibling.innerHTML = carListIteam.length+'&nbsp &nbsp авто'
             countSpan[2].nextSibling.nextSibling.style.opacity = '1'
         }
         

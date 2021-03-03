@@ -1,5 +1,6 @@
-export function priceRangeSlider(min, max,patch,index) {
-  const priceSlider = document.querySelectorAll(patch);
+export let priceSlider;
+export function priceRangeSlider(min, max, patch, index) {
+  priceSlider = document.querySelectorAll(patch);
   const minPrice = document.querySelectorAll(".minPrice");
   const maxPrice = document.querySelectorAll(".maxPrice");
   const inputs = [minPrice[index], maxPrice[index]];
@@ -31,6 +32,20 @@ export function priceRangeSlider(min, max,patch,index) {
       element.addEventListener("change", (event) => {
         setPriceSlider(index, event.currentTarget.value);
       });
+    });
+  }
+}
+
+export function updateRangeInput(indexItem,dataMin,dataMax) {
+  
+  let min = dataMin
+  let max = dataMax
+  if (min != max) {
+    priceSlider[indexItem].noUiSlider.updateOptions({
+      range: {
+        'min': +min,
+        'max': +max
+      }
     });
   }
 }
